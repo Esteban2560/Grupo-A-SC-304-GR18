@@ -1,0 +1,53 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Arboles;
+
+/**
+ *
+ * @author lucas
+ */
+ import batalla.Batalla;
+
+
+public class NodoBatalla {
+    
+//dato como la batalla que toma
+
+    private Batalla dato;
+    //nodos de izquierda y derecha
+    private NodoBatalla izquierda, derecha;
+
+    
+    //nodo igual que el arbol de clase
+    public NodoBatalla(Batalla dato) {
+        this.dato = dato;
+        this.izquierda = null;
+        this.derecha = null;
+    }
+
+    public Batalla getDato() {
+        return dato;
+    }
+
+    public void setDato(Batalla dato) {
+        this.dato = dato;
+    }
+
+    public NodoBatalla getIzquierda() {
+        return izquierda;
+    }
+
+    public void setIzquierda(NodoBatalla izquierda) {
+        this.izquierda = izquierda;
+    }
+
+    public NodoBatalla getDerecha() {
+        return derecha;
+    }
+
+    public void setDerecha(NodoBatalla derecha) {
+        this.derecha = derecha;
+    }
+}
