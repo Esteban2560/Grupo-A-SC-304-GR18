@@ -1,0 +1,50 @@
+*/
+package Arboles;
+
+/**
+ *
+ * @author lucas
+ */
+import batalla.Batalla;
+
+public class ArbolBatalla {
+
+
+
+
+    private NodoBatalla raiz;
+
+    public ArbolBatalla() {
+        this.raiz = null;
+    }
+
+    public NodoBatalla getRaiz() {
+        return raiz;
+    }
+
+    public void insertar(Batalla batalla) {
+        raiz = insertarRec(raiz, batalla);
+    }
+
+    private NodoBatalla insertarRec(NodoBatalla raiz, Batalla batalla) {
+
+        if (raiz == null) {
+            return new NodoBatalla(batalla);//arbol vacio
+        }
+
+        // se hace comparacion a tomar por el numero de la batalla
+        
+        //si es menor entonces esta va para la izquierda si no para la derecha
+        if (batalla.getNumero() < raiz.getDato().getNumero()) {
+            raiz.setIzquierda(insertarRec(raiz.getIzquierda(), batalla));
+        } 
+        else if (batalla.getNumero() > raiz.getDato().getNumero()) {
+            raiz.setDerecha(insertarRec(raiz.getDerecha(), batalla));
+        }
+
+        return raiz;
+    }
+
+
+    
+}
